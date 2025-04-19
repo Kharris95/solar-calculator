@@ -1,6 +1,7 @@
 // import movingclouds from "./assets/movingclouds.mp4";
 import sunlyLogo from "./assets/sunlyLogo.PNG";
 import heroBackground from "./assets/heroBackgroundImage.png";
+import phoneGraphic from "./assets/phonegraphic.png";
 export default function App() {
   return (
     <div>
@@ -15,6 +16,8 @@ export default function App() {
         <Hero />
       </div>
       <HowItWorks />
+      <WhyCheck />
+      <InfoForm />
     </div>
   );
 }
@@ -132,7 +135,7 @@ function HowItWorks() {
               Enter Your ZIP
             </h3>
             <p className="text-gray-300">
-              Enter your ZIP code and completing a short form to see options
+              Enter your ZIP code and complete a short form to see options
               available in your area
             </p>
           </div>
@@ -167,11 +170,241 @@ function HowItWorks() {
             </h3>
             <p className="text-gray-300">
               Select your preferred option and schedule an obligation free
-              consultation when you're ready.
+              consultation if you'd like.
             </p>
           </div>
         </div>
       </div>
     </section>
   );
+}
+
+function WhyCheck() {
+  return (
+    <section className="relative bg-orange-50 pt-16 pb-24">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center justify-between">
+          {/* Text Content */}
+          <div className="lg:w-1/2 space-y-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              Why Check Your Solar Savings Potential?
+            </h2>
+
+            <div className="space-y-6">
+              {/* Reason 1 */}
+              <div className="p-6 rounded-xl bg-white border-2 border-amber-100 hover:border-amber-300 transition-all shadow-lg hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-amber-500 rounded-lg text-white">
+                    <span className="text-2xl">🌞</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      State Incentives
+                    </h3>
+                    <p className="text-gray-600">
+                      Many homeowners qualify for state and federal programs
+                      that can significantly reduce or even eliminate upfront
+                      costs through tax credits and rebates.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reason 2 */}
+              <div className="p-6 rounded-xl bg-white border-2 border-amber-100 hover:border-amber-300 transition-all shadow-lg hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-amber-500 rounded-lg text-white">
+                    <span className="text-2xl">📊</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      Accurate Comparisons
+                    </h3>
+                    <p className="text-gray-600">
+                      Our Sunly calculator removes the guesswork by analyzing
+                      your specific energy needs and providing clear comparisons
+                      between verified local providers.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Reason 3 */}
+              <div className="p-6 rounded-xl bg-white border-2 border-amber-100 hover:border-amber-300 transition-all shadow-lg hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 bg-amber-500 rounded-lg text-white">
+                    <span className="text-2xl">💰</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-800 mb-2">
+                      Substantial Savings
+                    </h3>
+                    <p className="text-gray-600">
+                      Typical solar adopters save between $30,000 to $100,000
+                      over the lifespan of their system, depending on their
+                      location and energy consumption.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Image Container */}
+          <div className="w-full lg:w-1/3 flex justify-center p-4 ">
+            <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full overflow-hidden">
+              <img
+                src={phoneGraphic}
+                alt="Phone graphic"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function InfoForm() {
+  return (
+    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-b from-black to-gray-900 py-16 px-4">
+      <form className="w-full max-w-2xl bg-white/10 backdrop-blur-lg rounded-2xl shadow-2xl p-8 space-y-6 border border-white/10">
+        {/* Form Header */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-amber-400 mb-2">
+            Solar Eligibility Check
+          </h2>
+          <p className="text-gray-300">
+            Answer a few questions to see if solar is right for your home
+          </p>
+        </div>
+
+        {/* Homeowner Status */}
+        <div className="space-y-2">
+          <label className="block text-amber-300 font-semibold mb-2">
+            Are you the homeowner? <span className="text-red-500">*</span>
+          </label>
+          <div className="flex gap-4">
+            <label className="flex items-center space-x-2 text-white">
+              <input
+                type="radio"
+                name="homeowner"
+                required
+                className="h-4 w-4 text-amber-500 border-gray-300 focus:ring-amber-500"
+              />
+              <span>Yes</span>
+            </label>
+            <label className="flex items-center space-x-2 text-white">
+              <input
+                type="radio"
+                name="homeowner"
+                className="h-4 w-4 text-amber-500 border-gray-300 focus:ring-amber-500"
+              />
+              <span>No</span>
+            </label>
+          </div>
+        </div>
+
+        {/* Address with Autocomplete */}
+        <div className="space-y-2">
+          <label className="block text-amber-300 font-semibold mb-2">
+            Property Address <span className="text-red-500">*</span>
+          </label>
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg
+                className="h-5 w-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              placeholder="Start typing your address..."
+              required
+              className="w-full pl-10 pr-4 py-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/30"
+            />
+          </div>
+        </div>
+
+        {/* Average Electric Bill */}
+        <div className="space-y-2">
+          <label className="block text-amber-300 font-semibold mb-2">
+            Monthly Electric Bill ($) <span className="text-red-500">*</span>
+          </label>
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <span className="text-gray-400">$</span>
+            </div>
+            <input
+              type="number"
+              min="0"
+              step="1"
+              placeholder="Enter average amount"
+              required
+              className="w-full pl-10 pr-4 py-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/30"
+            />
+          </div>
+        </div>
+
+        {/* Shading Obstruction */}
+        <div className="space-y-2">
+          <label className="block text-amber-300 font-semibold mb-2">
+            Roof Shading <span className="text-red-500">*</span>
+          </label>
+          <select
+            required
+            className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-amber-400 focus:ring-2 focus:ring-amber-400/30 appearance-none"
+          >
+            <option value="" disabled selected>
+              Select shading level
+            </option>
+            <option className="bg-gray-800 text-white">
+              Very Minimal Shading
+            </option>
+            <option className="bg-gray-800 text-white">Moderate Shading</option>
+            <option className="bg-gray-800 text-white">
+              Substantial Shading
+            </option>
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className="w-full py-3 px-6 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-lg transform transition-all hover:scale-[1.02] hover:shadow-lg active:scale-95"
+        >
+          Check Eligibility
+        </button>
+      </form>
+    </div>
+  );
+}
+
+function Footer() {
+  return <footer></footer>;
 }
