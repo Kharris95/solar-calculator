@@ -1,7 +1,8 @@
 // import movingclouds from "./assets/movingclouds.mp4";
 import sunlyLogo from "./assets/sunlyLogo.PNG";
 import heroBackground from "./assets/heroBackgroundImage.png";
-import phoneGraphic from "./assets/phonegraphic.png";
+// import phoneGraphic from "./assets/phonegraphic.png";
+import Spline from "@splinetool/react-spline";
 export default function App() {
   return (
     <div>
@@ -45,7 +46,7 @@ function Header() {
         </nav>
         <button
           type="button"
-          class="inline-block rounded-full bg-yellow-500 text-black shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-yellow-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-yellow-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-yellow-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
+          className="inline-block rounded-full bg-yellow-500 text-black shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:bg-yellow-600 hover:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] focus:bg-yellow-800 focus:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] active:bg-yellow-700 active:shadow-[0_8px_9px_-4px_rgba(51,45,45,0.2),0_4px_18px_0_rgba(51,45,45,0.1)] px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal transition duration-150 ease-in-out focus:outline-none focus:ring-0"
         >
           Get a quote
         </button>
@@ -181,11 +182,29 @@ function HowItWorks() {
 
 function WhyCheck() {
   return (
-    <section className="relative bg-orange-50 pt-16 pb-24">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center justify-between">
+    <section className="relative bg-orange-50 pt-16 pb-24 overflow-hidden">
+      {/* Spline Background */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Spline
+          scene="https://prod.spline.design/2GhDPZk1dze7EkTm/scene.splinecode"
+          loading="eager"
+          className="w-full h-full"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            opacity: 0.7,
+          }}
+        />
+      </div>
+
+      {/* Content Container */}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex justify-center">
           {/* Text Content */}
-          <div className="lg:w-1/2 space-y-8">
+          <div className="max-w-2xl space-y-8 bg-white/80 backdrop-blur-sm p-8 rounded-xl border border-white/20">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
               Why Check Your Solar Savings Potential?
             </h2>
@@ -247,17 +266,6 @@ function WhyCheck() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Image Container */}
-          <div className="w-full lg:w-1/3 flex justify-center p-4 ">
-            <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full overflow-hidden">
-              <img
-                src={phoneGraphic}
-                alt="Phone graphic"
-                className="w-full h-auto object-contain"
-              />
             </div>
           </div>
         </div>
